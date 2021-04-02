@@ -7,6 +7,6 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/api/restaurants', restaurantRouter);
+app.use('/', restaurantRouter);
 
 module.exports = app;
