@@ -9,9 +9,9 @@ router.get('/', function(req, res, next) {
     console.log(res)
     result.data.pipe(res)
   }).catch((e) => {
-    const error = e.response.data.error
-    console.log(error)
-    res.send(error)
+    const error = e.response
+    console.log(error.data.error)
+    res.status(error.status).send(error.data.error)
   })
 });
 
@@ -20,9 +20,9 @@ router.get('/:id', function(req, res, next) {
     console.log(res)
     result.data.pipe(res)
   }).catch((e) =>{
-    const error = e.response.data.error
-    console.log(error)
-    res.send(error)
+    const error = e.response
+    console.log(error.data.error)
+    res.status(error.status).send(error.data.error)
   })
 });
 
