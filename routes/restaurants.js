@@ -4,7 +4,7 @@ const api = require('./restaurant-api')
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/restaurants', function(req, res, next) {
   api.get(req.query).then((result) => {
     console.log(result.data)
     res.json(result.data.businesses)
@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
   })
 });
 
-router.get('/:id', function(req, res, next) {
+router.get('/restaurants/:id', function(req, res, next) {
   api.getRestaurant(req.params.id).then((result) => {
     console.log(result.data)
     res.json(result.data)
